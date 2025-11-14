@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import CustomerDashboard from './components/CustomerDashboard'
@@ -32,6 +33,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<JobsListing />} />
           <Route path="/jobs" element={<JobsListing />} />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import './Dashboard.css'
 
 const CustomerDashboard = ({ user, onLogout }) => {
@@ -113,7 +114,10 @@ const CustomerDashboard = ({ user, onLogout }) => {
           <h1>Welcome, {user.name}!</h1>
           <p>Post your service requirements and get them done</p>
         </div>
-        <button onClick={onLogout} className="logout-btn">Logout</button>
+        <div className="header-actions">
+          <Link to="/" className="view-jobs-btn">Browse All Jobs</Link>
+          <button onClick={onLogout} className="logout-btn">Logout</button>
+        </div>
       </header>
 
       <div className="dashboard-content">

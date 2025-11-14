@@ -76,38 +76,12 @@ const JobsListing = () => {
 
   return (
     <div className="jobs-listing-page">
-      <header className="listing-header">
-        <div className="header-content">
+      <div className="listing-hero">
+        <div className="hero-content">
           <h1>Service Management Platform</h1>
-          <p className="header-subtitle">Find skilled professionals for your service needs</p>
-          <div className="header-actions">
-            {user ? (
-              <div className="user-info">
-                <span>Welcome, {user.name}!</span>
-                <Link to={user.type === 'customer' ? '/customer' : '/professional'} className="dashboard-link">
-                  Go to Dashboard
-                </Link>
-                <button
-                  className="logout-link"
-                  onClick={() => {
-                    localStorage.removeItem('user')
-                    setUser(null)
-                    navigate('/')
-                  }}
-                  style={{ border: 'none', cursor: 'pointer' }}
-                >
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <>
-                <Link to="/login" className="login-link">Sign In</Link>
-                <Link to="/signup" className="signup-link">Get Started</Link>
-              </>
-            )}
-          </div>
+          <p className="hero-subtitle">Find skilled professionals for your service needs</p>
         </div>
-      </header>
+      </div>
 
       <div className="listing-content">
         <div className="stats-banner">

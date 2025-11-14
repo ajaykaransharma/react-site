@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import './Dashboard.css'
 
 const ProfessionalDashboard = ({ user, onLogout }) => {
@@ -100,7 +101,10 @@ const ProfessionalDashboard = ({ user, onLogout }) => {
           <h1>Welcome, {user.name}!</h1>
           <p>{user.profession.charAt(0).toUpperCase() + user.profession.slice(1)} Professional</p>
         </div>
-        <button onClick={onLogout} className="logout-btn">Logout</button>
+        <div className="header-actions">
+          <Link to="/" className="view-jobs-btn">Browse All Jobs</Link>
+          <button onClick={onLogout} className="logout-btn">Logout</button>
+        </div>
       </header>
 
       <div className="dashboard-content">
